@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/line-awesome.min.css">
+  <style>
+    .btnn {
+      width: calc(25% - 10px);
+      padding: 30px 0px;
+      text-align: center;
+      cursor: pointer;
+      background-color: lightblue;
+      border-radius: 50%;
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 30px;
+      font-weight: bold;
+      opacity: 80%;
+
+      transition: 0.1s ease-in-out;
+    }
+
+    .btnn i{
+      font-size: 35px;
+    }
+
+    .btnn:hover{
+      transform: scale(1.06);
+      background-color: white;
+      opacity: 100%;
+    }
+    .whole {
+      width: 450px;
+      background-color: rgba(222, 222, 222, 1);
+      padding: 40px;
+      border-radius: 10px;
+
+      margin:auto;
+    }
+
+    .bigbox {
+      width: 450px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-left: 5px;
+      /* border: 1px solid black; */
+    }
+
+    #display {
+      padding: 10px;
+      background-color: lightseagreen;
+      border-radius: 5px;
+      text-align: right;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 40px;
+
+      margin-bottom: 40px;
+      display: flex;
+    }
+
+    #w-20{
+      width:10%;
+    }
+
+    #w-80{
+      width: 90%;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="whole">
+    <div id="display">
+      <div id="w-20"></div>
+      <div id="w-80">0</div>
+    </div>
+    <div class="bigbox">
+      <div class="btnn" id="ce-btn" onclick="reseter()">AC</div>
+      <div class="btnn" id="ce-reset" onclick="reseter()">RST</div>
+      <div class="btnn" id="backspace" onclick="backspacer()">
+        <i class="las la-backspace"></i>
+      </div>
+      <div class="btnn" id="equal" onclick="equalTo()">=</div>
+      <div class="btnn" id="btn1" onclick="digitIn(1)">1</div>
+      <div class="btnn" id="btn2" onclick="digitIn(2)">2</div>
+      <div class="btnn" id="btn3" onclick="digitIn(3)">3</div>
+      <div class="btnn" id="plus" onclick="operate('+')">+</div>
+      <div class="btnn" id="btn4" onclick="digitIn(4)">4</div>
+      <div class="btnn" id="btn5" onclick="digitIn(5)">5</div>
+      <div class="btnn" id="btn6" onclick="digitIn(6)">6</div>
+      <div class="btnn" id="minus" onclick="operate('-')">-</div>
+      <div class="btnn" id="btn7" onclick="digitIn(7)">7</div>
+      <div class="btnn" id="btn8" onclick="digitIn(8)">8</div>
+      <div class="btnn" id="btn9" onclick="digitIn(9)">9</div>
+      <div class="btnn" id="multi" onclick="operate('x')">x</div>
+      <div class="btnn" id="btn00" onclick="digitIn('00')">00</div>
+      <div class="btnn" id="btn0" onclick="digitIn(0)">0</div>
+      <div class="btnn" id="dott" onclick="digitIn('.')">.</div>
+      <div class="btnn" id="division" onclick="operate('/')">/</div>
+    </div>
+  </div>
+
+  <script src="js/calc.js"></script>
+</body>
+
+</html>
